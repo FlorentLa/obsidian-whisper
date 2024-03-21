@@ -502,17 +502,6 @@ class SampleSettingTab extends PluginSettingTab {
 				}));
 
 		new Setting(containerEl)
-			.setName('Whisper model path')
-			.setDesc('The ggml model used to transcribe')
-			.addText(text => text
-				.setPlaceholder('models/ggml-large-v3.bin')
-				.setValue(this.plugin.settings.whipserModel)
-				.onChange(async (value) => {
-					this.plugin.settings.whipserModel = value;
-					await this.plugin.saveSettings();
-				}));
-
-		new Setting(containerEl)
 			.setName('Audio device')
 			.setDesc('The audio device index to record')
 			.addText(text => text
